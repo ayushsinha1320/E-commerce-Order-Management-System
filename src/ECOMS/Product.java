@@ -31,4 +31,16 @@ public class Product {
     public void reduce_stock(int quantity){
         stock -= quantity;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
 }
