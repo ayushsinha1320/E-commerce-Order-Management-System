@@ -1,6 +1,6 @@
 package ECOMS;
 
-public class Product {
+public class Product implements IStockManager{
     /***
      * Members
      * 1. name -> Name of the Product
@@ -23,6 +23,9 @@ public class Product {
      * Methods
      * 1. get_details() -> This method will return a String of all the value the object is storing
      * 2. reduce_stock() -> This method will reduce the quantity of the stock by the quantity passed as the arguments.
+     * 3. getName() -> This method will return the name  of the product.
+     * 4. getPrice() -> This method will return the price of the product.
+     * 5. getStock() -> This method will return the stock of the product.
      */
 
     public String get_details(){
@@ -42,5 +45,21 @@ public class Product {
 
     public int getStock() {
         return stock;
+    }
+
+    /***
+     * IStockManager Interface Implementations
+     * 1. check_stock() -> Checks of the stock is greater than the required stock.
+     * 2. update_stock() -> Update the stock of the product.
+     */
+
+    @Override
+    public boolean check_stock(int quantity) {
+        return stock >= quantity;
+    }
+
+    @Override
+    public void update_stock(int quantity) {
+        stock -= quantity;
     }
 }

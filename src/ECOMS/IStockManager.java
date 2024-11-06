@@ -1,6 +1,6 @@
 package ECOMS;
 
 public interface IStockManager {
-    int check_stock();
-    void update_stock();
+    boolean check_stock(int quantity);
+    void update_stock(int quantity);
 }
