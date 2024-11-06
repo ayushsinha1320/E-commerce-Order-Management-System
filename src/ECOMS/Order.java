@@ -20,7 +20,15 @@ public class Order {
         return productList;
     }
 
-    public Customer getCustomer() {
+    public Customer get_customer() {
         return customer;
+    }
+
+    public double calculate_total() {
+        double total = 0.0;
+        for (Product product : productList) {
+            total += product.getPrice();
+        }
+        return total;
     }
 }
